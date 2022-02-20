@@ -1,0 +1,44 @@
+{
+  "name": "doby-style-cli",
+  "version": "1.0.0",
+  "description": "CLI for style structure",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavle-doby/doby-style.git"
+  },
+  "keywords": [
+    "cli",
+    "style",
+    "fe",
+    "structure",
+    "basic",
+    "setup"
+  ],
+  "author": "pavle-doby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pavle-doby/doby-style/issues"
+  },
+  "homepage": "https://github.com/pavle-doby/doby-style#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "chalk-animation": "^1.3.0",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.0",
+    "inquirer": "^8.2.0",
+    "nanospinner": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}
