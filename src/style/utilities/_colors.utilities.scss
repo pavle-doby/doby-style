@@ -1,0 +1,35 @@
+// TODO: Add colors from your design system
+$colors: (
+	brand-primary: $color-brand-primary,
+	brand-secondary: $color-brand-secondary,
+	green-primary: $color-green-primary,
+	green-medium: $color-green-medium,
+	green: $color-green,
+	green-light: $color-green-light,
+	green-lighter: $color-green-lighter,
+	orange-dark: $color-orange-dark,
+	orange-primary: $color-orange-primary,
+	orange-medium: $color-orange-medium,
+	orange-light: $color-orange-light,
+	yellow-main: $color-yellow-main,
+	yellow-light: $color-yellow-light,
+	red-main: $color-red-main,
+	red-light: $color-red-light,
+	grey-main: $color-grey-main,
+	gray-light: $color-gray-light,
+	gray-brown-light: $color-gray-brown-light,
+	white: $color-white,
+	transparent: transparent,
+) !default;
+
+@each $color, $color-value in $colors {
+	.c-#{$color} {
+		color: $color-value !important;
+	}
+}
+
+@each $bg-color, $color-value in $colors {
+	.bg-#{$bg-color} {
+		background-color: $color-value !important;
+	}
+}

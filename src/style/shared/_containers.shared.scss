@@ -1,0 +1,34 @@
+// TODO: Setup your container width
+// TODO: Setup Container paddings in _containers.tokens.scss
+$container-md-width: 1440px;
+$container-sm-width: 790px;
+
+@mixin create-container($width, $padding) {
+	padding-left: $padding;
+	padding-right: $padding;
+	max-width: $width + (2 * $padding);
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	@include create-container($container-md-width, $container-mobile-padding);
+
+	&--sm {
+		@include create-container($container-sm-width, $container-mobile-padding);
+	}
+}
+
+.container--left {
+	margin: 0;
+}
+
+@include tablet {
+	.container {
+		@include create-container($container-md-width, $container-desktop-padding);
+
+		&--sm {
+			@include create-container($container-sm-width, $container-desktop-padding);
+		}
+	}
+}

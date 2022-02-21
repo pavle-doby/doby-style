@@ -1,0 +1,38 @@
+// TODO: Setup proper values 
+$radio-base-font-size: 16px;
+$radio-base-circle-size: 32px;
+$radio-base-circle-inner-size: 12px;
+$radio-circle-margin: 10px;
+
+.radio {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+
+	input {
+		display: grid;
+		place-content: center;
+		appearance: none;
+		background-color: #fff;
+		width: $radio-base-circle-size;
+		height: $radio-base-circle-size;
+		margin: 0;
+		margin-inline-end: $radio-circle-margin;
+		border-radius: 50%;
+		border: 1px solid #000;
+	}
+
+	input::after {
+		content: '';
+		width: $radio-base-circle-inner-size;
+		height: $radio-base-circle-inner-size;
+		border-radius: 50%;
+		transform: scale(0);
+		transition: transform 0.2s ease-in-out;
+		background-color: skyblue;
+	}
+
+	input:checked::after {
+		transform: scale(1);
+	}
+}

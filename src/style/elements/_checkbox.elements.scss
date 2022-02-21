@@ -1,0 +1,42 @@
+// TODO: Setup proper values 
+$checkbox-base-font-size: 16px;
+$checkbox-base-square-size: 32px;
+$checkbox-base-square-margin: 10px;
+$checkbox-base-check-width: 7px;
+$checkbox-base-check-height: 17px;
+$checkbox-base-check-color: skyblue;
+$checkbox-border-color: #000;
+
+.checkbox {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+
+	input {
+		display: grid;
+		place-content: center;
+		appearance: none;
+		background-color: #fff;
+		width: $checkbox-base-square-size;
+		height: $checkbox-base-square-size;
+		margin: 0;
+		margin-inline-end: $checkbox-base-square-margin;
+		border: 1px solid $checkbox-border-color;
+	}
+
+	input::after {
+		content: '';
+		width: $checkbox-base-check-width;
+		height: $checkbox-base-check-height;
+		border: solid $checkbox-base-check-color;
+		border-width: 0 2px 2px 0;
+		margin-top: -3px;
+		transform: scale(0);
+		transition: transform 0.2s ease;
+	}
+
+	input:checked::after {
+		transform: scale(1);
+		transform: rotate(45deg);
+	}
+}

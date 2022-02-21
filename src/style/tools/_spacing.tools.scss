@@ -1,0 +1,18 @@
+$spacers: (0px, 2px, 4px, 8px, 12px, 16px, 24px, 32px, 40px, 48px, 60px, 64px, 80px, auto) !default;
+$sides: (right, left, bottom, top);
+
+@each $side in $sides {
+	@each $space in $spacers {
+		.m#{str-slice($side,1,1)}-#{strip-unit($space)} {
+			@include spacing($side, #{$space});
+		}
+	}
+}
+
+.m-0 {
+	margin: 0 !important;
+}
+
+.p-0 {
+	padding: 0 !important;
+}

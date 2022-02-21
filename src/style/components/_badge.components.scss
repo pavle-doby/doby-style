@@ -1,0 +1,24 @@
+$sizes: (
+	sm: 20px,
+	md: 24px,
+) !default;
+
+$font-sizes: (
+	sm: 12px,
+	md: 16px,
+) !default;
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+@each $scale, $size in $sizes {
+	.badge--#{$scale} {
+		width: $size;
+		height: $size;
+		font-size: map-get($font-sizes, $scale);
+	}
+}
