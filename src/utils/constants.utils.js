@@ -11,6 +11,8 @@ export const TREE_TYPE = {
 export const PATH_STYLE = "./src/style";
 export const PATH_DEST = ".";
 
+export const GLOBALS_CONTENT = ["tokens", "functions", "tools"];
+
 export const QUESTION = {
   WIZARD_ALL: "Wizard - All",
   WIZARD_PARTIALLY: "Wizard - Partial Structure",

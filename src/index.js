@@ -10,6 +10,7 @@ import {
 import { getTreeReport, getTreeStats } from "./utils/treeReport.utils.js";
 import { PATH_DEST, PATH_STYLE, QUESTION } from "./utils/constants.utils.js";
 import { byDoby, welcome } from "./utils/messages.utils.js";
+import { importsFileForStyle } from "./utils/import.utils.js";
 
 await welcome();
 const answer = await initQuestion();
@@ -29,6 +30,8 @@ if (answer === QUESTION.WIZARD_ALL) {
 }
 
 spinner.start();
+
+importsFileForStyle({ src: "./style" });
 
 const report = await getTreeReport({ base: "./style" });
 const { dirCount, fileCount } = await getTreeStats({ base: "./style" });

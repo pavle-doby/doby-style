@@ -4,7 +4,7 @@ import inquirer from "inquirer";
 import { QUESTION, PATH_STYLE } from "./constants.utils.js";
 import { getTreeReport } from "./treeReport.utils.js";
 import { safePath } from "./safePath.utils.js";
-
+import { importsFileForFolder } from "./import.utils.js";
 
 export async function initQuestion() {
   const answer = await inquirer.prompt({
@@ -30,7 +30,7 @@ export async function stepByStepQuestion({ message, choices }) {
 
 /**
  *
- * Copies `data`(file or folder) based on `answers` to `cbQuestion`. 
+ * Copies `data`(file or folder) based on `answers` to `cbQuestion`.
  * If `cbQuestion` is not passed it will copy `data` from `src` to `dest`.
  *
  * @param {string} src - source of folder being copied
@@ -39,6 +39,8 @@ export async function stepByStepQuestion({ message, choices }) {
  *
  */
 export async function styleWizard({ src, dest, cbQuestion }) {
+  const isStyleFolder = src === PATH_STYLE;
+
   const stats = fs.statSync(src);
   const isDirectory = stats.isDirectory();
   const isFile = stats.isFile();
@@ -49,7 +51,7 @@ export async function styleWizard({ src, dest, cbQuestion }) {
 
   let answer = QUESTION.YES;
 
-  if (cbQuestion && cbQuestion instanceof Function && src !== PATH_STYLE) {
+  if (cbQuestion && cbQuestion instanceof Function && !isStyleFolder) {
     if (isDirectory) {
       const reportMsg = await getTreeReport({ base: src, rootName: dataName });
       console.log(chalk.inverse(`\n${reportMsg}\n`));
@@ -85,6 +87,13 @@ export async function styleWizard({ src, dest, cbQuestion }) {
         cbQuestion: toCopyAll ? null : cbQuestion,
       });
     }
+
+    if (isStyleFolder) {
+      //Imports for style folder are added when styleWizard is done
+      return;
+    }
+
+    importsFileForFolder({ src: dataPath });
   }
 
   if (isFile) {
