@@ -1,9 +1,9 @@
 import fs from "fs";
 import chalk from "chalk";
 import inquirer from "inquirer";
-import { QUESTION, PATH_STYLE } from "./constants.utils.js";
+import { QUESTION, PATH } from "./constants.utils.js";
 import { getTreeReport } from "./treeReport.utils.js";
-import { safePath } from "./safePath.utils.js";
+import { formatPath } from "./formatPath.utils.js";
 import { importsFileForFolder } from "./import.utils.js";
 
 export async function initQuestion() {
@@ -39,7 +39,7 @@ export async function stepByStepQuestion({ message, choices }) {
  *
  */
 export async function styleWizard({ src, dest, cbQuestion }) {
-  const isStyleFolder = src === PATH_STYLE;
+  const isStyleFolder = src === PATH.STYLE;
 
   const stats = fs.statSync(src);
   const isDirectory = stats.isDirectory();
@@ -47,7 +47,7 @@ export async function styleWizard({ src, dest, cbQuestion }) {
 
   const dataName = src.split("/").pop();
   const dataContent = isDirectory ? fs.readdirSync(src) : fs.readFileSync(src);
-  const dataPath = safePath(`${dest}/${dataName}`);
+  const dataPath = formatPath(`${dest}/${dataName}`);
 
   let answer = QUESTION.YES;
 
@@ -82,8 +82,8 @@ export async function styleWizard({ src, dest, cbQuestion }) {
 
     for (let name of dataContent) {
       await styleWizard({
-        src: safePath(`${src}/${name}`),
-        dest: safePath(`${dataPath}`),
+        src: formatPath(`${src}/${name}`),
+        dest: formatPath(`${dataPath}`),
         cbQuestion: toCopyAll ? null : cbQuestion,
       });
     }

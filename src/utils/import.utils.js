@@ -1,6 +1,6 @@
 import fs from "fs";
 import { GLOBALS_CONTENT } from "./constants.utils.js";
-import { safePath } from "./safePath.utils.js";
+import { formatPath } from "./formatPath.utils.js";
 
 /**
  * Formats import line for scss.
@@ -18,7 +18,7 @@ export function formatImport(file) {
  * @param {string} src - path to folder
  */
 export function importsFileForFolder({ src }) {
-  const srcName = safePath(src).split("/").pop();
+  const srcName = formatPath(src).split("/").pop();
   const files = fs.readdirSync(src);
 
   let filesContent = "";
