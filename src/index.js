@@ -12,7 +12,7 @@ import { PATH, QUESTION } from "./utils/constants.utils.js";
 import { byDoby, welcome } from "./utils/messages.utils.js";
 import { importsFileForStyle } from "./utils/import.utils.js";
 
-async () => {
+async function main() {
   await welcome();
   const answer = await initQuestion();
 
@@ -45,4 +45,6 @@ async () => {
   spinner.success({ text: "Style structure setup is done!\n\n" });
 
   byDoby();
-};
+}
+
+main();
