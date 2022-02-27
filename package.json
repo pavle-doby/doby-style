@@ -10,7 +10,7 @@
   },
   "name": "doby-style-cli",
   "description": "Quick CLI for basic style structure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
   "bin": {
     "doby-style-cli": "src/index.js",
@@ -32,7 +32,12 @@
     "style",
     "cli",
     "fe",
-    "setup"
+    "setup",
+    "scss",
+    "structure",
+    "wizard",
+    "generator",
+    "template"
   ],
   "author": "pavle-doby",
   "license": "MIT",
