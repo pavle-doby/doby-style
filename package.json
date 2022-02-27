@@ -12,6 +12,12 @@
   "description": "Quick CLI for basic style structure",
   "version": "1.0.0",
   "main": "src/index.js",
+  "bin": {
+    "doby-style-cli": "src/index.js",
+    "doby-style": "src/index.js",
+    "ds-cli": "src/index.js",
+    "ds": "src/index.js"
+  },
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
