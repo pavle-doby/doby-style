@@ -29,53 +29,53 @@ ds
 
 ## Style folder structure  
 
-**style**
-|── **components**
-|  ├── _badge.components.scss
-|  └── _components.scss
-|── **elements**
-|  ├── _button.elements.scss
-|  ├── _checkbox.elements.scss
-|  ├── _core.elements.scss
-|  ├── _elements.scss
-|  └── _radio.elements.scss
-|── **functions**
-|  ├── _breakpoints.functions.scss
-|  ├── _functions.scss
-|  ├── _rtl.functions.scss
-|  ├── _split.functions.scss
-|  ├── _strip-unit.functions.scss
-|  ├── _transition.functions.scss
-|  └── _z-index.functions.scss
-|── **generic**
-|  ├── _generic.scss
-|  ├── _normalize.generic.scss
-|  └── _typography.generic.scss
-|── **shared**
-|  ├── _containers.shared.scss
-|  ├── _heading.shared.scss
-|  ├── _hide.shared.scss
-|  ├── _reset.shared.scss
-|  └── _shared.scss
-|── **tokens**
-|  ├── _colors.tokens.scss
-|  ├── _containers.tokens.scss
-|  ├── _spacings.tokens.scss
-|  ├── _text-direction.tokens.scss
-|  ├── _tokens.scss
-|  └── _typography.tokens.scss
-|── **tools**
-|  ├── _font-size.tools.scss
-|  ├── _size.tools.scss
-|  ├── _spacing.tools.scss
-|  └── _tools.scss
-|── **utilities**
-|  ├── _colors.utilities.scss
-|  ├── _cursor.utilities.scss
-|  ├── _display.utilities.scss
-|  ├── _flex.utilities.scss
-|  ├── _size.utilities.scss
-|  ├── _utilities.scss
-|  └── _wip.utilities.scss
-|── **_global.scss**
-└── **index.scss**
+**style** <br>
+|── **components** <br>
+|  ├── _badge.components.scss <br>
+|  └── _components.scss <br>
+|── **elements** <br>
+|  ├── _button.elements.scss <br>
+|  ├── _checkbox.elements.scss <br>
+|  ├── _core.elements.scss <br>
+|  ├── _elements.scss <br>
+|  └── _radio.elements.scss <br>
+|── **functions** <br>
+|  ├── _breakpoints.functions.scss <br>
+|  ├── _functions.scss <br>
+|  ├── _rtl.functions.scss <br>
+|  ├── _split.functions.scss <br>
+|  ├── _strip-unit.functions.scss <br>
+|  ├── _transition.functions.scss <br>
+|  └── _z-index.functions.scss <br>
+|── **generic** <br>
+|  ├── _generic.scss <br>
+|  ├── _normalize.generic.scss <br>
+|  └── _typography.generic.scss <br>
+|── **shared** <br>
+|  ├── _containers.shared.scss <br>
+|  ├── _heading.shared.scss <br>
+|  ├── _hide.shared.scss <br>
+|  ├── _reset.shared.scss <br>
+|  └── _shared.scss <br>
+|── **tokens** <br>
+|  ├── _colors.tokens.scss <br>
+|  ├── _containers.tokens.scss <br>
+|  ├── _spacings.tokens.scss <br>
+|  ├── _text-direction.tokens.scss <br>
+|  ├── _tokens.scss <br>
+|  └── _typography.tokens.scss <br>
+|── **tools** <br>
+|  ├── _font-size.tools.scss <br>
+|  ├── _size.tools.scss <br>
+|  ├── _spacing.tools.scss <br>
+|  └── _tools.scss <br>
+|── **utilities** <br>
+|  ├── _colors.utilities.scss <br>
+|  ├── _cursor.utilities.scss <br>
+|  ├── _display.utilities.scss <br>
+|  ├── _flex.utilities.scss <br>
+|  ├── _size.utilities.scss <br>
+|  ├── _utilities.scss <br>
+|  └── _wip.utilities.scss <br>
+|── **_global.scss** <br>
+└── **index.scss** <br>
