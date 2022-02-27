@@ -58,18 +58,20 @@ export async function styleWizard({ src, dest, cbQuestion }) {
     }
 
     const message = `${isDirectory ? "/" : ""}${dataName}?`;
-    const choices = [
-      isDirectory && QUESTION.WIZARD_ALL,
-      isDirectory && QUESTION.WIZARD_PARTIALLY,
-      isFile && QUESTION.YES,
-      QUESTION.NO,
-    ].filter(Boolean);
+
+    const choicesDirectory = [
+      QUESTION.WIZARD_ALL,
+      QUESTION.WIZARD_NONE,
+      QUESTION.WIZARD_PARTIALLY,
+    ];
+    const choicesFile = [QUESTION.YES, QUESTION.NO];
+    const choices = isDirectory ? choicesDirectory : choicesFile;
 
     answer = await cbQuestion({ message, choices });
   }
 
   const toCopyAll = answer === QUESTION.WIZARD_ALL;
-  const notToCopy = answer === QUESTION.NO;
+  const notToCopy = [QUESTION.NO, QUESTION.WIZARD_NONE].includes(answer);
 
   if (notToCopy) {
     return;

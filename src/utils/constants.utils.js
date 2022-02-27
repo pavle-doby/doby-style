@@ -16,26 +16,21 @@ export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = path.dirname(__filename);
 
 const root = __dirname.split("\\").slice(0, -2).join("\\");
-const rootCWD = process.cwd(); // root for Current Working Directory
+const rootCWD = process.cwd(); // CWD - Current Working Directory
 
 export const PATH = {
   ROOT: formatPath(root),
-  STYLE: formatPath(path.join(root, "/src/style")), //`${root}\\src\\style`,
+  STYLE: formatPath(path.join(root, "/src/style")),
   DEST: formatPath(rootCWD),
   DEST_STYLE: `${formatPath(rootCWD)}/style`,
 };
 
-function getRoot() {
-  return process.cwd();
-}
-
-console.log({ __filename, __dirname, PATH, wdRoot: getRoot() });
-
 export const GLOBALS_CONTENT = ["tokens", "functions", "tools"];
 
 export const QUESTION = {
-  WIZARD_ALL: "Wizard - All",
-  WIZARD_PARTIALLY: "Wizard - Partial Structure",
+  WIZARD_ALL: "All",
+  WIZARD_NONE: "None",
+  WIZARD_PARTIALLY: "Partial Structure",
   YES: "Yes",
   NO: "No",
   ALL: "All",
