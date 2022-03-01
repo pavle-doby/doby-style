@@ -9,8 +9,8 @@
     "tree-cli": "^0.6.7"
   },
   "name": "doby-style-cli",
-  "description": "Quick CLI for basic style structure",
-  "version": "1.0.5",
+  "description": "Quick CLI Wizard for basic style structure",
+  "version": "1.0.6",
   "main": "src/index.js",
   "bin": {
     "doby-style-cli": "src/index.js",
