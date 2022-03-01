@@ -10,7 +10,7 @@
   },
   "name": "doby-style-cli",
   "description": "Quick CLI for basic style structure",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "src/index.js",
   "bin": {
     "doby-style-cli": "src/index.js",
