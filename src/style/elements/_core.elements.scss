@@ -1,32 +1,32 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: $global-font-size;
-	font-weight: $global-font-weight;
-	letter-spacing: $global-letter-spacing;
+  font-size: $global-font-size;
+  font-weight: $global-font-weight;
+  letter-spacing: $global-letter-spacing;
 }
 
 body {
-	position: relative;
-	display: flex;
-	margin: 0;
-	background-color: $color-gray-f1;
-	color: $global-font-color;
-	font-family: $global-font-family;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  position: relative;
+  display: flex;
+  margin: 0;
+  background-color: #f0f0f0;
+  color: $global-font-color;
+  font-family: $global-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #app {
-	display: flex;
-	flex-direction: column;
-	float: left;
-	width: 100%;
-	height: 100vh;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 100%;
+  height: 100vh;
 }
 
 // TODO: Uncomment if thi is ok for your project
