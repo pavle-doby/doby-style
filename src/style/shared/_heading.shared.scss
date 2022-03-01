@@ -1,54 +1,51 @@
 %heading {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 .heading-hero {
-	@extend %heading;
-	font-size: $header-hero-font-size;
+  @extend %heading;
+  font-size: $header-hero-font-size;
 }
 
 .heading-1 {
-	@extend %heading;
-	font-size: $header-h1-font-size;
+  @extend %heading;
+  font-size: $header-h1-font-size;
 }
 
 .heading-2 {
-	@extend %heading;
-	font-size: $header-h2-font-size;
+  @extend %heading;
+  font-size: $header-h2-font-size;
 }
 
 .heading-3 {
-	@extend %heading;
-	font-size: $header-h3-font-size;
+  @extend %heading;
+  font-size: $header-h3-font-size;
 }
 
 .heading-4 {
-	@extend %heading;
-	color: $color-brand-secondary;
-	font-size: $header-h4-font-size;
-	letter-spacing: 3.2px;
-	text-transform: uppercase;
+  @extend %heading;
+  font-size: $header-h4-font-size;
 }
 
 @include laptop {
-	.heading-hero {
-		font-size: $header-hero-font-size-desktop;
-	}
+  .heading-hero {
+    font-size: $header-hero-font-size-desktop;
+  }
 
-	.heading-1 {
-		font-size: $header-h1-font-size-desktop;
-	}
+  .heading-1 {
+    font-size: $header-h1-font-size-desktop;
+  }
 
-	.heading-2 {
-		font-size: $header-h2-font-size-desktop;
-	}
+  .heading-2 {
+    font-size: $header-h2-font-size-desktop;
+  }
 
-	.heading-3 {
-		font-size: $header-h3-font-size-desktop;
-	}
+  .heading-3 {
+    font-size: $header-h3-font-size-desktop;
+  }
 
-	.heading-4 {
-		font-size: $header-h4-font-size-desktop;
-		letter-spacing: 4.5px;
-	}
+  .heading-4 {
+    font-size: $header-h4-font-size-desktop;
+    letter-spacing: 4.5px;
+  }
 }
