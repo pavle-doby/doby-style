@@ -23,8 +23,6 @@ yarn global add doby-style-cli
 ```bash
 doby-style-cli
 doby-style
-ds-cli
-ds
 ```
 
 3. Choose what you want to include in your project.
@@ -81,39 +79,53 @@ style
 
 ## Future Improvements
 
-##### TODO: Add Command for adding single file in specific folder.
+### TODO: Add Options in Doby Style Wizard for displaying file content. 
+
+<br>
+
+#### TODO: Add Command for adding single file in specific folder.
 
 ```c
 // command
-doby-style --<folder-name> <predefined-file> // Will add & import predefined file by doby-style-cli
-doby-style --<folder-name> <new-file> // Will add, import & name a new file with predefined convention
+doby-style add <folder-name> <predefined-file> // Will add & import predefined file by doby-style-cli
+doby-style add <folder-name> <new-file> // Will add, import & name a new file with predefined convention
 
 // shorthands
-doby-style -<first-letter-of-folder> <predefined-file>
-doby-style -<first-letter-of-folder> <new-file>
+doby-style add <first-letter-of-folder> <predefined-file>
+doby-style add <first-letter-of-folder> <new-file>
 
 // command examples
-doby-style --components badge
-doby-style --components spinner
-doby-style --elements button
-doby-style --elements link
+doby-style add components badge
+doby-style add elements link
 
 // shorthands examples
-doby-style -c badge
-doby-style -c spinner
-doby-style -e button
-doby-style -e link
-
+doby-style add c badge
+doby-style add e link
 ```
 
-This command will work for every folder.
+#### TODO: Add Command for removing single file from specific folder
+```c
+// command
+doby-style remove <folder-name> <file-name> // Will remove file & imports from your current project structure
+
+// shorthand
+doby-style remove <first-letter-of-folder> <file-name> // Will remove file & imports from your current project structure
+
+// command example
+doby-style remove components badge
+
+// shorthand example
+doby-style remove c badge
+```
+
 
 #### TODO: Add Command for listing all TODOs from files
+This command will work for every folder.
 
 ```c
-doby-style --todo // Will show all TODOs from style files.
+doby-style todo // Will show all TODOs from style files.
 
-// (eg.)
+// Output eg.
 [<file-name>] TODO: <message>
 
 [_colors.tokens.scss] TODO: Set up colors from your design system
@@ -121,31 +133,48 @@ doby-style --todo // Will show all TODOs from style files.
 
 [_colors.utilities.scss] TODO: Add colors from _colors.tokens.scss
 ...
-
 ```
 
-#### TODO: Add Command for adding/deleting custom files to doby-style-cli structure
+#### TODO: Add Command for saving custom files to doby-style-cli structure
 
 This will alow you to add your custom style and then use it in other projects
 
 ```c
 // command
-doby-style add --<folder-name> <filename> // Will take existing file and add/delete it to/from doby-style-cli structure
+doby-style save <folder-name> <filename> // Will take existing file and save it to doby-style-cli structure
+
 // shorthand
-doby-style add --<first-letter-of-folder> <filename>
+doby-style save <first-letter-of-folder> <filename>
 
 // (eg.)
-doby-style add --components spinner
-doby-style add --c spinner
+doby-style save components spinner
+doby-style save c spinner
+```
+
+#### TODO: Add Command for deleting files from doby-style-cli structure
+
+This will alow you to delete style that you never use in other projects.
+// Not recommended because you can easily skip them when setting up your project and they may come in handy someday.
+
+```c
+// command
+doby-style delete <folder-name> <filename> // Will delete existing file from global doby-style-cli structure.
+
+// shorthand
+doby-style delete <first-letter-of-folder> <filename>
+
+// (eg.)
+doby-style delete components spinner
+doby-style delete c spinner
 ```
 
 #### TODO: Add Command for showing current doby-style-cli structure
 
 ```c
 // ? - optional flag
-doby-style structure ?--<folder-name>
+doby-style structure ?<folder-name>
 
 // (eg.)
 doby-style structure // Will show structure of style folder
-doby-style structure --components // Will show structure of components folder
+doby-style structure components // Will show structure of components folder
 ```
