@@ -12,10 +12,10 @@ export const TREE_TYPE = {
   FILE: "file",
 };
 
-export const __filename = fileURLToPath(import.meta.url);
-export const __dirname = path.dirname(__filename);
+export const __filename = formatPath(fileURLToPath(import.meta.url));
+export const __dirname = formatPath(path.dirname(__filename));
 
-const root = __dirname.split("\\").slice(0, -2).join("\\");
+const root = __dirname.split("/").slice(0, -2).join("/"); // root of doby-style-cli
 const rootCWD = process.cwd(); // CWD - Current Working Directory
 
 export const PATH = {

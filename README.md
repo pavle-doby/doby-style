@@ -14,6 +14,8 @@ npm install -g doby-style-cli
 yarn global add doby-style-cli
 ```
 
+
+
 ## Usage
 
 0. Open terminal <br>
@@ -23,6 +25,11 @@ yarn global add doby-style-cli
 ```bash
 doby-style-cli
 doby-style
+
+# or (if you installed the package locally)
+
+npx doby-style-cli
+npx doby-style
 ```
 
 3. Choose what you want to include in your project.
