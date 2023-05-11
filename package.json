@@ -10,7 +10,7 @@
   },
   "name": "doby-style-cli",
   "description": "Quick CLI Wizard for basic style structure",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "main": "src/index.js",
   "bin": {
     "doby-style-cli": "src/index.js",
@@ -36,7 +36,8 @@
     "wizard",
     "generator",
     "template",
-    "tool"
+    "tool",
+    "cli"
   ],
   "author": "pavle-doby",
   "license": "MIT",

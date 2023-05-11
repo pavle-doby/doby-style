@@ -1,13 +1,19 @@
+/**
+ * By adding `button--reset` class you will 
+ * remove annoying default style and
+ * will be able to style it as you like
+ */
+
 %reset-button {
-	background: none;
-	border: 0;
-	cursor: pointer;
-	outline: none;
-	padding: 0;
-	line-height: 1;
-	color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  line-height: 1;
+  color: inherit;
 }
 
 .button--reset {
-	@extend %reset-button;
+  @extend %reset-button;
 }

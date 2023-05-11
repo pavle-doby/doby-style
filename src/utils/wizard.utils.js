@@ -5,6 +5,7 @@ import { QUESTION, PATH } from "./constants.utils.js";
 import { getTreeReport } from "./treeReport.utils.js";
 import { formatPath } from "./formatPath.utils.js";
 import { importsFileForFolder } from "./import.utils.js";
+import { showHeadline, showMetaInfo } from "./messages.utils.js";
 
 export async function initQuestion() {
   const answer = await inquirer.prompt({
@@ -46,7 +47,9 @@ export async function styleWizard({ src, dest, cbQuestion }) {
   const isFile = stats.isFile();
 
   const dataName = src.split("/").pop();
-  const dataContent = isDirectory ? fs.readdirSync(src) : fs.readFileSync(src);
+  const dataContent = isDirectory
+    ? fs.readdirSync(src)
+    : fs.readFileSync(src, "utf8");
   const dataPath = formatPath(`${dest}/${dataName}`);
 
   let answer = QUESTION.YES;
@@ -64,7 +67,13 @@ export async function styleWizard({ src, dest, cbQuestion }) {
       QUESTION.WIZARD_NONE,
       QUESTION.WIZARD_PARTIALLY,
     ];
-    const choicesFile = [QUESTION.YES, QUESTION.NO];
+    const choicesFile = [
+      QUESTION.YES,
+      QUESTION.NO,
+      QUESTION.VIEW_INFO,
+      QUESTION.VIEW_CONTENT,
+      QUESTION.VIEW_METADATA,
+    ];
     const choices = isDirectory ? choicesDirectory : choicesFile;
 
     answer = await cbQuestion({ message, choices });
@@ -72,6 +81,9 @@ export async function styleWizard({ src, dest, cbQuestion }) {
 
   const toCopyAll = answer === QUESTION.WIZARD_ALL;
   const notToCopy = [QUESTION.NO, QUESTION.WIZARD_NONE].includes(answer);
+  const toViewContent = answer === QUESTION.VIEW_CONTENT;
+  const toViewMetadata = answer === QUESTION.VIEW_METADATA;
+  const toViewInfo = answer === QUESTION.VIEW_INFO;
 
   if (notToCopy) {
     return;
@@ -98,7 +110,47 @@ export async function styleWizard({ src, dest, cbQuestion }) {
     importsFileForFolder({ src: dataPath });
   }
 
+  if (toViewContent) {
+    showContent({ content: dataContent });
+  }
+
+  if (toViewMetadata) {
+    showMetadata({ name: dataName, size: stats.size, path: src });
+  }
+
+  if (toViewInfo) {
+    showContent({ content: dataContent });
+    showMetadata({ name: dataName, size: stats.size, path: src });
+  }
+
+  if (toViewContent || toViewMetadata || toViewInfo) {
+    // Show the same question after all info
+    await styleWizard({
+      src,
+      dest,
+      cbQuestion,
+    });
+
+    return;
+  }
+
   if (isFile) {
+    // Add file to a project
     fs.writeFileSync(dataPath, dataContent);
   }
+}
+
+function showContent({ content }) {
+  showHeadline({ text: "Content" });
+
+  console.log(content);
+}
+
+function showMetadata({ name, size, path }) {
+  showHeadline({ text: "Metadata" });
+
+  showMetaInfo({ prefix: "name:", info: name });
+  showMetaInfo({ prefix: "size:", info: `${size} bytes` });
+  showMetaInfo({ prefix: "path:", info: path });
+  console.log();
 }
