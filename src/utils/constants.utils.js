@@ -34,4 +34,7 @@ export const QUESTION = {
   YES: "Yes",
   NO: "No",
   ALL: "All",
+  VIEW_INFO: "Info (Content & Metadata)",
+  VIEW_CONTENT: "Content",
+  VIEW_METADATA: "Metadata",
 };
