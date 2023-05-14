@@ -86,10 +86,6 @@ style
 
 ## Future Improvements
 
-### TODO: Add Options in Doby Style Wizard for displaying file content. 
-
-<br>
-
 #### TODO: Add Command for adding single file in specific folder.
 
 ```c
